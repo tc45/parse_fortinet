@@ -1,0 +1,2640 @@
+
+config vdom
+edit DATACENTER
+
+config firewall ippool
+    edit "ippool-152.36.122.0-152.36.122.255"
+--More-- 
+         
+        set type overload
+        set startip 152.36.122.0
+        set endip 152.36.122.255
+        set arp-reply enable
+        set arp-intf ''
+        set associated-interface ''
+        set comments ''
+        set nat64 disable
+    next
+    edit "ippool-152.36.124.0-152.36.127.255"
+        set type overload
+        set startip 152.36.124.1
+        set endip 152.36.127.245
+        set arp-reply enable
+        set arp-intf ''
+        set associated-interface ''
+        set comments ''
+        set nat64 disable
+    next
+    edit "dc-pat"
+        set type overload
+        set startip 152.36.1.7
+--More-- 
+         
+        set endip 152.36.1.7
+        set arp-reply enable
+        set arp-intf ''
+        set associated-interface ''
+        set comments ''
+        set nat64 disable
+    next
+    edit "VDI-Static"
+        set type one-to-one
+        set startip 152.36.127.250
+        set endip 152.36.127.250
+        set arp-reply enable
+        set arp-intf ''
+        set comments ''
+    next
+    edit "DMZ-OpManager"
+        set type one-to-one
+        set startip 152.36.1.25
+        set endip 152.36.1.25
+        set arp-reply enable
+        set arp-intf ''
+        set comments ''
+--More-- 
+         
+    next
+    edit "ippool-152.36.123.0-152.36.123.255"
+        set type overload
+        set startip 152.36.123.0
+        set endip 152.36.123.255
+        set arp-reply enable
+        set arp-intf ''
+        set associated-interface ''
+        set comments "Server MGT"
+        set nat64 disable
+    next
+end
+config firewall ippool6
+end
+config firewall ldb-monitor
+end
+config firewall vip
+    edit "vip-10.132.22.79"
+        set id 0
+        set uuid 14592164-794b-51e7-a4fa-a1aed3b22a54
+        set comment ''
+        set type static-nat
+--More-- 
+         
+        set extip 152.36.122.79
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.79"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "HOST-mailexch2010"
+        set id 0
+        set uuid ec7ab5ba-7d85-51e7-5922-9fc633718cdf
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.27
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.27"
+        set extintf "port18"
+--More-- 
+         
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "HOST-vip.queens.edu"
+        set id 0
+        set uuid 0318a980-7d86-51e7-09cc-0529003d3772
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.65
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.65"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+--More-- 
+         
+        set color 0
+    next
+    edit "TestJICS02"
+        set id 0
+        set uuid 031fcca6-7d86-51e7-7859-2a1a6748067c
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.82
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.82"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "HOST-APPTRIDIUM01"
+        set id 0
+        set uuid 03224a58-7d86-51e7-77ea-d66e0716126b
+--More-- 
+         
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.37
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.37"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "WEB-helpdesk.queens.edu"
+        set id 0
+        set uuid 03253060-7d86-51e7-6756-f648ab9c228d
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.31
+        set nat44 enable
+        set nat46 disable
+--More-- 
+         
+        set mappedip "10.132.22.31"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "HOST-Gaming"
+        set id 0
+        set uuid 032806f0-7d86-51e7-fb54-9521fbdfac1c
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.90
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.90"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+--More-- 
+         
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "HOST-DC05"
+        set id 0
+        set uuid 032ef230-7d86-51e7-cb9e-33e58b2491be
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.101
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.101"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "HOST-DC04"
+--More-- 
+         
+        set id 0
+        set uuid 032fea64-7d86-51e7-9b66-75352f878752
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.100
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.100"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "WEB-MySiteTest"
+        set id 0
+        set uuid 0331f232-7d86-51e7-68d8-c439f86c0f77
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.73
+--More-- 
+         
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.73"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "WEB-MyTest"
+        set id 0
+        set uuid 0333acda-7d86-51e7-bd23-1931d4879321
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.68
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.68"
+        set extintf "port18"
+        set arp-reply enable
+--More-- 
+         
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Host-APP02"
+        set id 0
+        set uuid 0334c70a-7d86-51e7-0699-9def76910979
+        set comment ''
+        set type static-nat
+        set extip 152.36.64.202
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.45"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+--More-- 
+         
+    next
+    edit "Web_Queens_edu"
+        set id 0
+        set uuid 03368d6a-7d86-51e7-407b-72989ad59f88
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.64
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.64"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-HOST-appumra01"
+        set id 0
+        set uuid 7061b68a-7d86-51e7-aae9-bc7a20430506
+        set comment ''
+--More-- 
+         
+        set type static-nat
+        set extip 152.36.122.23
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.23"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-WEB-myreports.queens.edu"
+        set id 0
+        set uuid 70683c80-7d86-51e7-c49a-2e0d2bd370b6
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.41
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.41"
+--More-- 
+         
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-S2_Controller"
+        set id 0
+        set uuid 70691fe2-7d86-51e7-9fa7-181b77ade15d
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.77
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.77"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+--More-- 
+         
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-HOST-DBUMRA01"
+        set id 0
+        set uuid 706b2b48-7d86-51e7-99b9-35c0409109c4
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.28
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.28"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-ezproxy"
+        set id 0
+--More-- 
+         
+        set uuid 887f2504-7d86-51e7-6d05-db61f4151cc9
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.75
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.75"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-web-campus"
+        set id 0
+        set uuid 88840d08-7d86-51e7-abaf-9631aa4d9656
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.63
+        set nat44 enable
+--More-- 
+         
+        set nat46 disable
+        set mappedip "10.132.22.63"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-web-campus2"
+        set id 0
+        set uuid 8886e212-7d86-51e7-638e-7a91364a9b07
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.29
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.29"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+--More-- 
+         
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-host-appclean02"
+        set id 0
+        set uuid 88878dca-7d86-51e7-37ca-c0da19b766ce
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.219
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.219"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+--More-- 
+         
+    edit "vip-host-appmonitor"
+        set id 0
+        set uuid 88895f2e-7d86-51e7-f04d-cc4dec7cb6b8
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.70
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.70"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-web-myfinancialaid"
+        set id 0
+        set uuid 888a0cb2-7d86-51e7-0e5c-a281c621f90b
+        set comment ''
+        set type static-nat
+--More-- 
+         
+        set extip 152.36.122.132
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.132"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-websp01"
+        set id 0
+        set uuid 4d80e9b8-7d88-51e7-336e-1a0f129f066c
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.66
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.66"
+        set extintf "port18"
+--More-- 
+         
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-mypassword"
+        set id 0
+        set uuid f9f5c07c-7d8a-51e7-f36d-07d828d78d1a
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.51
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.51"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+--More-- 
+         
+        set color 0
+    next
+    edit "Host_EnergyMGT_Albright"
+        set id 0
+        set uuid baedc73e-a554-51e7-ef9e-f88a8b3c25b3
+        set comment ''
+        set type static-nat
+        set extip 152.36.117.90
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.128.90"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Web_yesandQueens_edu"
+        set id 0
+        set uuid 6002b846-c324-51e7-423b-6ed3156b56be
+--More-- 
+         
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.220
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.220"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip_testappjics02"
+        set id 0
+        set uuid 1f6467fa-4333-51e8-dda5-6f156ea05020
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.30
+        set nat44 enable
+        set nat46 disable
+--More-- 
+         
+        set mappedip "10.132.22.30"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-HOST-APP06"
+        set id 0
+        set uuid c3362a1c-64e4-51e8-9864-495e2ebf5472
+        set comment "Created by MMM 5/31/2018"
+        set type static-nat
+        set extip 152.36.122.55
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.55"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+--More-- 
+         
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "AeroHive_VGVA_VPN"
+        set id 0
+        set uuid d5c3c964-ddde-51e8-8ae0-83af4a42852d
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.42
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.42"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-Appjics03"
+--More-- 
+         
+        set id 0
+        set uuid e44c6ca8-e79c-51e8-cdad-5aed530da203
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.233
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.233"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "HOST-QNEWS"
+        set id 0
+        set uuid 98340e74-022d-51e9-47d9-eecf7c96e414
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.113
+--More-- 
+         
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.113"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-HOST-APP08"
+        set id 0
+        set uuid 3cd20b8c-936c-51e9-4b07-145c93569d6f
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.212
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.212"
+        set extintf "port18"
+        set arp-reply enable
+--More-- 
+         
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "New_mydesktop"
+        set id 0
+        set uuid 1969b882-969d-51e9-6e31-bf6dc16ee13a
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.118
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.118"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+--More-- 
+         
+    next
+    edit "HOST-DBUMRA03"
+        set id 0
+        set uuid 9fd316f6-b2dc-51e9-b805-592f530ebfd9
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.92
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.92"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-Host-REWS"
+        set id 0
+        set uuid 765fabc6-42e3-51ea-ddc4-62269f462739
+        set comment ''
+--More-- 
+         
+        set type static-nat
+        set extip 152.36.122.131
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.131"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Sulu02.queens.edu"
+        set id 0
+        set uuid 70c739cc-aa94-51ea-666a-343db841dcb0
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.130
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.130"
+--More-- 
+         
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "appK1000.queens.edu"
+        set id 0
+        set uuid 32053a5a-db3f-51ea-06b5-17feceb4b692
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.140
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.140"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+--More-- 
+         
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "appk200.queens.edu"
+        set id 0
+        set uuid 51832c84-db3f-51ea-0a9f-86ae7b44c982
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.106
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.106"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "mycourses"
+        set id 0
+--More-- 
+         
+        set uuid b061ad0a-5125-51eb-fc79-471030843889
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.175
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.175"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Appaviso01"
+        set id 0
+        set uuid aad08490-6bc1-51eb-3dfe-8e12813884b2
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.50
+        set nat44 enable
+--More-- 
+         
+        set nat46 disable
+        set mappedip "10.132.22.50"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Host_Appsmtprelay02"
+        set id 0
+        set uuid 78c580d0-d82d-51eb-b00c-493695727216
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.48
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.48"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+--More-- 
+         
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "host_APPSRELAY01"
+        set id 0
+        set uuid aea8f894-d82d-51eb-9d58-842e308fe3e7
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.47
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.47"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+--More-- 
+         
+    edit "DMZ - OpManager"
+        set id 0
+        set uuid a55ca820-df36-51eb-71ce-5be8264256e6
+        set comment "DMZ to OpManager netflow traffic"
+        set type static-nat
+        set extip 152.36.1.25
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.36"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward enable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+        set protocol udp
+        set extport 9996
+        set mappedport 9996
+        set portmapping-type 1-to-1
+    next
+    edit "TCP-DMZ - OpManager"
+--More-- 
+         
+        set id 0
+        set uuid f95326f2-df45-51eb-4033-907b45e85ab3
+        set comment "DMZ to OpManager netflow traffic"
+        set type static-nat
+        set extip 152.36.1.25
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.36"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward enable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+        set protocol tcp
+        set extport 9996
+        set mappedport 9996
+        set portmapping-type 1-to-1
+    next
+    edit "VIP-connect2.queens.edu"
+        set id 0
+--More-- 
+         
+        set uuid 7f76ad46-0776-51ec-d125-b3a5c60fd056
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.133
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.133"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "API.Queens.edu"
+        set id 0
+        set uuid ccbe07b4-197e-51ed-bf4a-f4aef37cc69e
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.86
+        set nat44 enable
+--More-- 
+         
+        set nat46 disable
+        set mappedip "10.132.22.86"
+        set extintf "port18"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Energy_Management"
+        set id 0
+        set uuid 6e48f6be-7272-51ee-0236-1d89530e91c3
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.155
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.155"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+--More-- 
+         
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-IDRAC_MGT"
+        set id 0
+        set uuid 5d4d0502-55fd-51ef-88d8-95915d5cb89f
+        set comment ''
+        set type static-nat
+        set extip 152.36.123.10
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.2.10"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+--More-- 
+         
+    edit "vip-10.132.22.78"
+        set id 0
+        set uuid 96c40e1c-5a6b-51ef-d082-f8c27d446989
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.78
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.78"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-10.132.22.80"
+        set id 0
+        set uuid 4ed583f0-5a6c-51ef-0288-cb061bc799fe
+        set comment ''
+        set type static-nat
+--More-- 
+         
+        set extip 152.36.122.80
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.80"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Tierpoint_Appliance_10"
+        set id 0
+        set uuid 329dd1a4-60a9-51ef-2ea3-777dd52366e8
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.10
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.10"
+        set extintf "any"
+--More-- 
+         
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+end
+
+config firewall vipgrp
+    edit "secure_web_vip"
+        set uuid 2eaacb98-7d89-51e7-128e-fed165d89233
+        set interface "port18"
+        set color 0
+        set comments ''
+        set member "Host-APP02" "HOST-Gaming" "HOST-mailexch2010" "HOST-QNEWS" "HOST-vip.queens.edu" "TestJICS02" "vip-10.132.22.79" "vip-Appjics03" "vip-host-appmonitor" "vip-HOST-appumra01" "vip-HOST-DBUMRA01" "vip-Host-REWS" "vip-mypassword" "vip-web-campus" "vip-web-campus2" "vip-web-myfinancialaid" "vip-WEB-myreports.queens.edu" "vip_testappjics02" "WEB-MySiteTest" "WEB-MyTest" "Web_Queens_edu" "Web_yesandQueens_edu" "mycourses" "Appaviso01" "Host_Appsmtprelay02" "host_APPSRELAY01" "VIP-connect2.queens.edu" "vip-10.132.22.78" "vip-10.132.22.80"
+--More-- 
+         
+    next
+    edit "web_access"
+        set uuid 3a0133ce-7d89-51e7-d05c-2d5c73203164
+        set interface "port18"
+        set color 0
+        set comments ''
+        set member "Host-APP02" "HOST-Gaming" "HOST-mailexch2010" "HOST-QNEWS" "HOST-vip.queens.edu" "TestJICS02" "vip-10.132.22.79" "vip-Appjics03" "vip-host-appmonitor" "vip-HOST-appumra01" "vip-HOST-DBUMRA01" "vip-Host-REWS" "vip-mypassword" "vip-web-campus" "vip-web-campus2" "vip-web-myfinancialaid" "vip-WEB-myreports.queens.edu" "vip_testappjics02" "WEB-MySiteTest" "WEB-MyTest" "Web_Queens_edu" "Web_yesandQueens_edu" "mycourses" "Host_Appsmtprelay02" "host_APPSRELAY01" "VIP-connect2.queens.edu" "vip-10.132.22.78" "vip-10.132.22.80"
+    next
+end
+
+
+
+
+config vdom
+edit VPN
+
+
+
+
+
+
+
+
+
+config vdom
+edit VRF
+
+
+config firewall ippool
+    edit "standard-nat"
+        set type overload
+        set startip 152.36.1.8
+        set endip 152.36.1.8
+        set arp-reply enable
+        set arp-intf ''
+        set associated-interface ''
+        set comments ''
+        set nat64 disable
+    next
+    edit "Pool-152-36-16-0_22"
+        set type one-to-one
+        set startip 152.36.16.1
+        set endip 152.36.19.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Walker-Guest"
+    next
+    edit "Pool-152-36-20-0_22"
+        set type one-to-one
+        set startip 152.36.20.1
+        set endip 152.36.23.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Burwell-Guest"
+    next
+    edit "Pool-152-36-24-0_22"
+        set type one-to-one
+        set startip 152.36.24.1
+        set endip 152.36.27.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Wireman-Guest"
+    next
+    edit "Pool-152-36-28-0_22"
+        set type one-to-one
+        set startip 152.36.28.1
+        set endip 152.36.31.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Remote-Guest"
+    next
+    edit "Pool-152-36-72-0_21"
+        set type one-to-one
+        set startip 152.36.72.1
+        set endip 152.36.79.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Wireman - Wireless - ResNet"
+    next
+    edit "Pool-152-36-96-0_20"
+        set type one-to-one
+        set startip 152.36.96.1
+        set endip 152.36.111.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Walker - Wireless - ResNet"
+    next
+    edit "Pool-152-36-116-0_24"
+        set type one-to-one
+        set startip 152.36.116.1
+        set endip 152.36.116.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Rogers Services NAT"
+    next
+    edit "Pool-152-36-117-0_24"
+        set type one-to-one
+        set startip 152.36.117.1
+        set endip 152.36.117.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Albright  Services NAT"
+    next
+    edit "Pool-152-36-118-0_24"
+        set type one-to-one
+        set startip 152.36.118.1
+        set endip 152.36.118.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Levine Services NAT"
+    next
+    edit "Pool-152-36-119-0_24"
+        set type one-to-one
+        set startip 152.36.119.1
+        set endip 152.36.119.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "North Services NAT"
+    next
+    edit "Pool-152-36-120-0_24"
+        set type one-to-one
+        set startip 152.36.120.1
+        set endip 152.36.120.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "SCCM-FACSTAFF"
+    next
+    edit "Pool-152-36-121-0_24"
+        set type one-to-one
+        set startip 152.36.121.1
+        set endip 152.36.121.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "SCCM-EDNET"
+    next
+    edit "Pool-152-36-122-0_24"
+        set type one-to-one
+        set startip 152.36.122.1
+        set endip 152.36.122.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Data Center New Servers"
+    next
+    edit "Pool-152-36-124-0_22"
+        set type one-to-one
+        set startip 152.36.124.1
+        set endip 152.36.127.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "VDI Clients"
+    next
+    edit "Pool-152-36-128-0_24"
+        set type one-to-one
+        set startip 152.36.128.1
+        set endip 152.36.128.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Albright1 RESNET"
+    next
+    edit "HOME_AP_VPN_Access_Outside"
+        set type overload
+        set startip 152.36.1.10
+        set endip 152.36.1.10
+        set arp-reply enable
+        set arp-intf ''
+        set associated-interface ''
+        set comments ''
+        set nat64 disable
+    next
+    edit "Pool-152-36-115-0_24"
+        set type one-to-one
+        set startip 152.36.115.1
+        set endip 152.36.115.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Rogers Services NAT"
+    next
+    edit "VRF_IP_NAT"
+        set type overload
+        set startip 152.36.1.5
+        set endip 152.36.1.5
+        set arp-reply enable
+        set arp-intf ''
+        set associated-interface ''
+        set comments ''
+        set nat64 disable
+    next
+    edit "Pool-152-36-10-0_24"
+        set type overload
+        set startip 152.36.10.1
+        set endip 152.36.10.255
+        set arp-reply enable
+        set arp-intf ''
+        set associated-interface ''
+        set comments "jernigan Facstaff"
+        set nat64 disable
+    next
+    edit "test"
+        set type one-to-one
+        set startip 152.36.32.1
+        set endip 152.36.32.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments ''
+    next
+    edit "Pool-152-36-61-0_24"
+        set type one-to-one
+        set startip 152.36.61.1
+        set endip 152.36.61.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "test Jernigan FacStaff NAT"
+    next
+    edit "Pool-152-36-80-0_24"
+        set type one-to-one
+        set startip 152.36.80.1
+        set endip 152.36.80.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Jernigan FacStaff Wired"
+    next
+    edit "Pool-152-36-81-0_22"
+        set type one-to-one
+        set startip 152.36.81.1
+        set endip 152.36.84.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Walker Facstaff Wireless new"
+    next
+    edit "Pool-152-36-90-0_22"
+        set type one-to-one
+        set startip 152.36.90.1
+        set endip 152.36.93.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Remote Facstaff wireless"
+    next
+    edit "Pool-152-36-86-0_24"
+        set type one-to-one
+        set startip 152.36.86.1
+        set endip 152.36.86.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Barnhardt FacStaff Wired"
+    next
+    edit "Pool-152-36-87-0_24"
+        set type one-to-one
+        set startip 152.36.87.1
+        set endip 152.36.87.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Barnhardt FacStaff Wireless"
+    next
+    edit "Pool-152-36-88-0_24"
+        set type one-to-one
+        set startip 152.36.88.1
+        set endip 152.36.88.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Byrum FacStaff Wireless"
+    next
+    edit "Pool-152-36-36-0_24"
+        set type one-to-one
+        set startip 152.36.36.1
+        set endip 152.36.36.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "test Walker FacStaff NAT"
+    next
+    edit "Pool-152-36-33-0_24"
+        set type one-to-one
+        set startip 152.36.33.1
+        set endip 152.36.33.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Rogers Facstaff"
+    next
+    edit "Pool-152-36-37-0_24"
+        set type one-to-one
+        set startip 152.36.37.1
+        set endip 152.36.37.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Campus_SVS FacStaff NAT"
+    next
+    edit "Pool-152-36-38-0_24"
+        set type one-to-one
+        set startip 152.36.38.1
+        set endip 152.36.38.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Dana FacStaff NAT"
+    next
+    edit "Pool-152-36-39-0_24"
+        set type one-to-one
+        set startip 152.36.39.1
+        set endip 152.36.39.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Harris House FacStaff NAT"
+    next
+    edit "Pool-152-36-41-0_24"
+        set type one-to-one
+        set startip 152.36.41.1
+        set endip 152.36.41.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Morrison FacStaff NAT"
+    next
+    edit "Pool-152-36-42-0_24"
+        set type one-to-one
+        set startip 152.36.42.1
+        set endip 152.36.42.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Sykes FacStaff NAT"
+    next
+    edit "Pool-152-36-43-0_24"
+        set type one-to-one
+        set startip 152.36.43.1
+        set endip 152.36.43.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Trexler FacStaff NAT"
+    next
+    edit "Pool-152-36-44-0_24"
+        set type one-to-one
+        set startip 152.36.44.1
+        set endip 152.36.44.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Watkins FacStaff NAT"
+    next
+    edit "Pool-152-36-34-0_23"
+        set type one-to-one
+        set startip 152.36.34.1
+        set endip 152.36.35.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Wellesley Facstaff"
+    next
+    edit "Pool-152-36-45-0_24"
+        set type one-to-one
+        set startip 152.36.45.1
+        set endip 152.36.45.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Everette Facstaff"
+    next
+    edit "Pool-152-36-46-0_24"
+        set type one-to-one
+        set startip 152.36.46.1
+        set endip 152.36.46.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Burwell Facstaff"
+    next
+    edit "Pool-152-36-94-0_24"
+        set type one-to-one
+        set startip 152.36.94.1
+        set endip 152.36.94.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Byrum/South Facstaff"
+    next
+    edit "Pool-152-36-95-0_24"
+        set type one-to-one
+        set startip 152.36.95.1
+        set endip 152.36.95.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Levine Facstaff"
+    next
+    edit "Pool-152-36-89-0_24"
+        set type one-to-one
+        set startip 152.36.89.1
+        set endip 152.36.89.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "Sports Complex Facstaff"
+    next
+    edit "Pool-152-36-47-0_24"
+        set type one-to-one
+        set startip 152.36.47.1
+        set endip 152.36.47.255
+        set arp-reply enable
+        set arp-intf ''
+        set comments "McEwen FacStaff NAT"
+    next
+end
+config firewall vip
+    edit "AlbrightHVAC"
+        set id 0
+        set uuid 95e679ca-7dce-51e7-529d-394272d18edf
+        set comment ''
+        set type static-nat
+        set extip 152.36.117.0
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.128.0"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-rogers-energy"
+        set id 0
+        set uuid a228dcf6-7dd2-51e7-4a07-53f349d4e2f7
+        set comment ''
+        set type static-nat
+        set extip 152.36.116.0-152.36.116.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.133.0-10.128.133.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-knight-crane-lighting"
+        set id 0
+        set uuid b6504318-7dd2-51e7-bfba-e3a90e609cc2
+        set comment ''
+        set type static-nat
+        set extip 152.36.17.89
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.153.89"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-knight-crane-hvac"
+        set id 0
+        set uuid cb5e41f6-7dd2-51e7-fec0-d41f9eb98a68
+        set comment ''
+        set type static-nat
+        set extip 152.36.17.90
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.153.90"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-levine-hvac"
+        set id 0
+        set uuid eaf6b5fc-7dd2-51e7-4ac0-a42c27424094
+        set comment ''
+        set type static-nat
+        set extip 152.36.118.0
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.130.130.0"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-chapel-hvac"
+        set id 0
+        set uuid f9cbb226-7dd2-51e7-acbf-903d986e3af9
+        set comment ''
+        set type static-nat
+        set extip 152.36.18.70
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.136.70"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-solar-panels"
+        set id 0
+        set uuid 32a08952-7df4-51e7-136e-52928ecfc37d
+        set comment ''
+        set type static-nat
+        set extip 152.136.117.80-152.136.117.82
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.28.80-10.128.28.82"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Wireman-Wireless-ResNet-Internet"
+        set id 0
+        set uuid 8089883e-91a9-51e8-7013-ac762f4d0218
+        set comment ''
+        set type static-nat
+        set extip 152.36.72.0-152.36.79.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.130.64.0-10.130.71.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Wireman-ResNet-Internet"
+        set id 0
+        set uuid 1b74059a-91aa-51e8-2c31-5b91373703cd
+        set comment ''
+        set type static-nat
+        set extip 152.36.57.0-152.36.58.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.130.0.0-10.130.1.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Walker-Wireless-Resnet-Internet"
+        set id 0
+        set uuid 2b81af54-91ab-51e8-aba1-67c5a8740a78
+        set comment ''
+        set type static-nat
+        set extip 152.36.96.0-152.36.111.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.192.0-10.128.207.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Levine-FACSTAFF-Internet1"
+        set id 0
+        set uuid 8b85a3be-91ac-51e8-2d1a-f76be34feca0
+        set comment ''
+        set type static-nat
+        set extip 152.36.95.0-152.36.95.164
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.130.50.0-10.130.50.164"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Server-Datacenter-Internet"
+        set id 0
+        set uuid 021631ba-91ad-51e8-e317-920a781c32af
+        set comment ''
+        set type static-nat
+        set extip 152.36.122.0-152.36.122.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.22.0-10.132.22.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Walker-Wireless-Facstaff-Internet"
+        set id 0
+        set uuid 47b5e61e-91af-51e8-c9ed-a07c70b6179f
+        set comment ''
+        set type static-nat
+        set extip 152.36.81.0-152.36.84.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.244.0-10.128.247.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "NorthWest_Control"
+        set id 0
+        set uuid 8a236f9c-91b1-51e8-2915-96424d80d39e
+        set comment ''
+        set type static-nat
+        set extip 152.36.119.80
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.140.80"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "VDI Clients-Internet"
+        set id 0
+        set uuid 65977748-91b3-51e8-052b-76a2350096cd
+        set comment ''
+        set type static-nat
+        set extip 152.36.124.0-152.36.127.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.132.4.0-10.132.7.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Albright Resnet-Internet"
+        set id 0
+        set uuid 5f8a3df8-91b4-51e8-7b9d-933a7f7e0933
+        set comment ''
+        set type static-nat
+        set extip 152.36.28.0-152.36.29.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.2.0-10.128.3.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Belk Resnet-Internet"
+        set id 0
+        set uuid b082948a-91b4-51e8-375f-d6475c1d6320
+        set comment ''
+        set type static-nat
+        set extip 152.36.30.0-152.36.30.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.1.0-10.128.1.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Hayes Resnet-Internet"
+        set id 0
+        set uuid 06bf78ea-91b5-51e8-d2a1-57d29ea435e7
+        set comment ''
+        set type static-nat
+        set extip 152.36.31.0-152.36.31.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.6.0-10.128.6.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Barnhardt Resnet-Internet"
+        set id 0
+        set uuid 170f4788-91b6-51e8-1c1b-46f12cfd9de4
+        set comment ''
+        set type static-nat
+        set extip 152.36.32.0-152.36.32.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.32.0-10.133.32.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Byrum Resnet-Internet"
+        set id 0
+        set uuid 88c5fa5c-91b6-51e8-a030-e487f087634f
+        set comment ''
+        set type static-nat
+        set extip 152.36.59.0-152.36.59.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.130.2.0-10.130.2.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Walker Resnet-Internet"
+        set id 0
+        set uuid d045c10e-91b7-51e8-1423-d102f3458511
+        set comment ''
+        set type static-nat
+        set extip 152.36.60.0-152.36.60.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.14.0-10.128.14.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Remotel Wireless Resnet-Internet"
+        set id 0
+        set uuid 8aec910e-91b8-51e8-5f8c-2722686d7c64
+        set comment ''
+        set type static-nat
+        set extip 152.36.24.0-152.36.27.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.131.252.0-10.131.255.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Wellesley-FACSTAFF-Internet"
+        set id 0
+        set uuid b767c176-91be-51e8-3a2f-218079fe6331
+        set comment ''
+        set type static-nat
+        set extip 152.36.34.0-152.36.35.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.84.0-10.128.85.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Walker-FACSTAFF-Internet"
+        set id 0
+        set uuid 0e7b0f9a-91bf-51e8-34cb-a40f2888376d
+        set comment ''
+        set type static-nat
+        set extip 152.36.36.0-152.36.36.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.86.0-10.128.86.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Everette-FACSTAFF-Internet"
+        set id 0
+        set uuid 6b0b72a4-91bf-51e8-297e-fc5fb955a62d
+        set comment ''
+        set type static-nat
+        set extip 152.36.45.0-152.36.45.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.129.49.0-10.129.49.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Jernigan-FACSTAFF-Internet"
+        set id 0
+        set uuid b71652f4-91bf-51e8-88b9-841f6dbf3572
+        set comment ''
+        set type static-nat
+        set extip 152.36.80.0-152.36.80.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.129.50.0-10.129.50.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Burwell-FACSTAFF-Internet"
+        set id 0
+        set uuid fd395c36-91bf-51e8-3263-3efee73fd4b7
+        set comment ''
+        set type static-nat
+        set extip 152.36.46.0-152.36.46.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.129.51.0-10.129.51.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Byrum-FACSTAFF-Internet"
+        set id 0
+        set uuid 77c87022-91c0-51e8-4368-867acdb3692b
+        set comment ''
+        set type static-nat
+        set extip 152.36.94.0-152.36.94.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.130.49.0-10.130.49.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Sports Complex-FACSTAFF-Internet"
+        set id 0
+        set uuid be4f5c4e-91c1-51e8-15bf-544128f333b5
+        set comment ''
+        set type static-nat
+        set extip 152.36.89.0-152.36.89.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.131.50.0-10.131.50.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Remote Facstaff-Internet"
+        set id 0
+        set uuid 15a04726-91c5-51e8-6f8b-cfde39bb7087
+        set comment ''
+        set type static-nat
+        set extip 152.36.90.0-152.36.93.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.131.244.0-10.131.247.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "HBO_HVAC1"
+        set id 0
+        set uuid a029dd0a-c03f-51e8-0fa8-536ba9169459
+        set comment ''
+        set type static-nat
+        set extip 152.36.61.70
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.132.70"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "HBO_HVAC2"
+        set id 0
+        set uuid bf0455d4-c03f-51e8-f207-91d86aed1ad0
+        set comment ''
+        set type static-nat
+        set extip 152.36.61.71
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.132.71"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Albright_Hvac"
+        set id 0
+        set uuid 0aa7e4e4-c048-51e8-0c19-0a54f58fe46e
+        set comment ''
+        set type static-nat
+        set extip 152.36.117.90
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.128.90"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Levine_Hvac"
+        set id 0
+        set uuid 9f231756-c048-51e8-296c-7fc468527874
+        set comment ''
+        set type static-nat
+        set extip 152.36.118.66
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.130.130.66"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Barnhardt2 Resnet Wireless-Internet"
+        set id 0
+        set uuid d6b8eadc-cf21-51e8-ce36-8cc23d72e7f1
+        set comment ''
+        set type static-nat
+        set extip 152.36.68.0-152.36.71.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.60.0-10.133.63.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Albright Resnet Wireless-Internet"
+        set id 0
+        set uuid da599df6-cf23-51e8-a2c5-6b4ae22126f0
+        set comment ''
+        set type static-nat
+        set extip 152.36.20.0-152.36.23.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.28.0-10.133.31.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Byrum Resnet Wireless-Internet"
+        set id 0
+        set uuid 497a1ab6-cf25-51e8-25be-a4fa64234c1b
+        set comment ''
+        set type static-nat
+        set extip 152.36.48.0-152.36.51.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.124.0-10.133.127.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Barnhardt2-FACSTAFF-Internet"
+        set id 0
+        set uuid 02181536-cf27-51e8-4ad1-842253a11483
+        set comment ''
+        set type static-nat
+        set extip 152.36.86.0-152.36.86.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.34.0-10.133.34.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "ESPN_VIP_1"
+        set id 0
+        set uuid 5bfd0bf6-cf27-51e8-1ace-850b34cd7804
+        set comment ''
+        set type static-nat
+        set extip 152.36.87.0-152.36.87.16
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.225.0-10.133.225.16"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Byrum Wireless-FACSTAFF-Internet"
+        set id 0
+        set uuid 8439b808-cf27-51e8-c0b2-61e6c85641fc
+        set comment ''
+        set type static-nat
+        set extip 152.36.88.0-152.36.88.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.101.0-10.133.101.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Rogers-FACSTAFF-Internet"
+        set id 0
+        set uuid af9357b0-e6bb-51e8-e5eb-c4eee582e37c
+        set comment ''
+        set type static-nat
+        set extip 152.36.33.20-152.36.33.32
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.69.20-10.128.69.32"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "vip-Wireman-hvac"
+        set id 0
+        set uuid 2247adc8-e771-51e8-94ba-4a0d9fb622d9
+        set comment ''
+        set type static-nat
+        set extip 152.36.115.80
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.130.128.80"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Rogers-FACSTAFF-Internet2"
+        set id 0
+        set uuid 34e937e0-ec0c-51e8-0fba-e196fa55a6db
+        set comment ''
+        set type static-nat
+        set extip 152.36.33.35-152.36.33.250
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.69.35-10.128.69.250"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "delphinus.queens.edu"
+        set id 0
+        set uuid a1dc6282-ec0c-51e8-be30-6b0d62f6831a
+        set comment ''
+        set type static-nat
+        set extip 152.36.33.34
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.69.34"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Levine_VolleyBall_CAM"
+        set id 0
+        set uuid 83d843a0-105b-51e9-322e-cc9d19359cfe
+        set comment ''
+        set type static-nat
+        set extip 152.36.95.166
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.130.130.10"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Levine-FACSTAFF-Internet2"
+        set id 0
+        set uuid c2be23e6-105b-51e9-4496-cf7b7eb0837b
+        set comment ''
+        set type static-nat
+        set extip 152.36.95.167-152.36.95.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.130.50.167-10.130.50.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "HBO Resnet Wireless Internet"
+        set id 0
+        set uuid 4a178f54-92d3-51e9-9158-ea6290dbb6e6
+        set comment ''
+        set type static-nat
+        set extip 152.36.52.0-152.36.55.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.128.0-10.133.131.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Barnhardt_Control"
+        set id 0
+        set uuid 94740bae-c90b-51e9-2634-e8cd45ab2b46
+        set comment ''
+        set type static-nat
+        set extip 152.36.62.70
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.37.70"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Gambrell-Control-HVAC"
+        set id 0
+        set uuid f1bef72e-330a-51ea-fabc-a22613dc033a
+        set comment ''
+        set type static-nat
+        set extip 152.36.19.86
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.148.86"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Campus_Svs-FACSTAFF-Internet"
+        set id 0
+        set uuid 1fb919b2-7e78-51ea-89f6-fe82b4ba3ee3
+        set comment ''
+        set type static-nat
+        set extip 152.36.37.0-152.36.37.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.71.0-10.128.71.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Dana_FacStaff_Internet"
+        set id 0
+        set uuid d91d131c-7ea1-51ea-5871-7e8a5ea339fa
+        set comment ''
+        set type static-nat
+        set extip 152.36.38.0-152.36.38.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.74.0-10.128.74.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Harris_House_FacStaff_internet"
+        set id 0
+        set uuid 4c6bd2fe-7ea2-51ea-cc8e-f88e95186c15
+        set comment ''
+        set type static-nat
+        set extip 152.36.39.0-152.36.39.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.76.0-10.128.76.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "McEwen_FacStaff_internet"
+        set id 0
+        set uuid 7c429f30-7ea2-51ea-fb60-03d4a872958a
+        set comment ''
+        set type static-nat
+        set extip 152.36.47.0-152.36.47.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.77.0-10.128.77.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Morrison_FacStaff_Internet"
+        set id 0
+        set uuid d22d60d8-7ea2-51ea-0cf6-881fa3035ffa
+        set comment ''
+        set type static-nat
+        set extip 152.36.41.0-152.36.41.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.78.0-10.128.78.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Sykes_FacStaff_internet"
+        set id 0
+        set uuid 1a643cfa-7ea3-51ea-f6b3-9fecbdf7b8b4
+        set comment ''
+        set type static-nat
+        set extip 152.36.42.0-152.36.42.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.81.0-10.128.81.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Trexler_FacStaff_Internet"
+        set id 0
+        set uuid 52ed319e-7ea3-51ea-53e5-b75023e9965d
+        set comment ''
+        set type static-nat
+        set extip 152.36.43.0-152.36.43.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.82.0-10.128.82.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Watkins_FacStaff_internet"
+        set id 0
+        set uuid 7d326456-7ea3-51ea-3edd-1027f6bfe6bd
+        set comment ''
+        set type static-nat
+        set extip 152.36.44.0-152.36.44.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.83.0-10.128.83.255"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "HBO_Resnet_Wired"
+        set id 0
+        set uuid e16fd4ba-baf0-51ea-de1e-b166afea567f
+        set comment ''
+        set type static-nat
+        set extip 152.36.56.0-152.36.56.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.128.8.0-10.128.8.255"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "ESPN_VIP_2"
+        set id 0
+        set uuid 5b2eb622-2ae8-51ed-0411-44e3563888fb
+        set comment ''
+        set type static-nat
+        set extip 152.36.87.18-152.36.87.84
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.225.18-10.133.225.84"
+        set extintf "port35"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Unity_vip"
+        set id 0
+        set uuid d141f9fa-2ae8-51ed-9bc3-2445319e1613
+        set comment ''
+        set type static-nat
+        set extip 152.36.87.17
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.225.17"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "ESPN_Vip_87"
+        set id 0
+        set uuid bd9f4038-5af9-51ed-9007-33200ef4e00e
+        set comment ''
+        set type static-nat
+        set extip 152.36.87.87
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.225.87"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "ESPN_VIP_88"
+        set id 0
+        set uuid db3e9846-5af9-51ed-081d-cca4b597054f
+        set comment ''
+        set type static-nat
+        set extip 152.36.87.88
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.225.88"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "ESPN_VIP_3"
+        set id 0
+        set uuid 8f16ebc0-5afa-51ed-e87b-6d217c00a2f6
+        set comment ''
+        set type static-nat
+        set extip 152.36.87.90-152.36.87.110
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.225.90-10.133.225.110"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "ESPN_VIP_89"
+        set id 0
+        set uuid b8ce0eb4-642b-51ed-e200-4b32d4a4ee44
+        set comment ''
+        set type static-nat
+        set extip 152.36.87.89
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.225.89"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "ESPN_VIP_4"
+        set id 0
+        set uuid 5a926084-b372-51ed-8c90-d3ff8ccd1b1a
+        set comment ''
+        set type static-nat
+        set extip 152.36.87.113-152.36.87.122
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.225.113-10.133.225.122"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "ESPN_Unity_vip_New"
+        set id 0
+        set uuid 8073879c-b372-51ed-ec6e-fd01ed0aeb3a
+        set comment ''
+        set type static-nat
+        set extip 152.36.87.111
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.225.111"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "ESPN_VIP_85"
+        set id 0
+        set uuid 279d7e48-78f7-51ee-1133-7cef4cfed5f1
+        set comment ''
+        set type static-nat
+        set extip 152.36.87.85
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.225.85"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "Queen_Hall_FacS_Wireless"
+        set id 0
+        set uuid deaaa5b0-79e7-51ef-d2f7-78fa8feba7fe
+        set comment ''
+        set type static-nat
+        set extip 152.36.112.0-152.36.113.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.218.0-10.133.219.255"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "ESPN_VIP_5"
+        set id 0
+        set uuid 90b9d99c-8d98-51ef-adb0-d52435227de3
+        set comment ''
+        set type static-nat
+        set extip 152.36.87.124-152.36.87.255
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.225.113-10.133.225.244"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+    edit "ESPN_Unity_vip_New2"
+        set id 0
+        set uuid 2bbdc9a8-8d99-51ef-061c-a4c650eb9458
+        set comment ''
+        set type static-nat
+        set extip 152.36.87.123
+        set nat44 enable
+        set nat46 disable
+        set mappedip "10.133.225.123"
+        set extintf "any"
+        set arp-reply enable
+        set nat-source-vip disable
+        set portforward disable
+        set gratuitous-arp-interval 0
+        set ssl-client-rekey-count 0
+        set color 0
+    next
+end
